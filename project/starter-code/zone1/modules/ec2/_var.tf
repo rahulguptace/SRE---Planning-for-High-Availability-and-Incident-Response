@@ -15,3 +15,7 @@ variable "instance_type" {
 variable "tags" {
    default = {}
  }
+
+variable "azs" {
+ type = list(string)
+}

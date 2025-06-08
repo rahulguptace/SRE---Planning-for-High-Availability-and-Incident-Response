@@ -1,6 +1,7 @@
 resource "aws_instance" "ubuntu" {
   ami           = var.aws_ami
   count = var.instance_count
+  availability_zone = element(var.azs, count.index)
   instance_type = "t3.micro"
   key_name = "udacity"
   subnet_id = var.public_subnet_ids[0]
